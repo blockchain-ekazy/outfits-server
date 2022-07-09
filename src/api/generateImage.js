@@ -5,7 +5,7 @@ const ftp = require("ftp");
 
 module.exports = {
   generateImage: async (req, res, next) => {
-    console.log(req.headers[Symbol(kHeaders)]);
+    console.log(req.headers["kHeaders"]);
     if (
       req.hostname != "outfits-new.vercel.app" ||
       req.hostname != "worldofoutfits.com"
