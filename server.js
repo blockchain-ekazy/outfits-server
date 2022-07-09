@@ -6,8 +6,16 @@ var app = express();
 var cors = require("cors");
 var path = require("path");
 
-app.use(cors({ origin: "https://outfits-new.vercel.app" }));
+app.use(cors());
 
+app.use((req, res, next) => {
+  if (
+    req.hostname.includes("outfits-new.vercel.app") ||
+    req.hostname.includes("worldofoutfits.com")
+  )
+    next();
+  else res.status(403).end();
+});
 //metadata api
 // app.use("/api/", require("./src/api/metadata"));
 
