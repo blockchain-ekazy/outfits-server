@@ -9,9 +9,10 @@ var path = require("path");
 app.use(cors());
 
 app.use((req, res, next) => {
+  console.log(req.headers["referrer"]);
   if (
-    req.headers["referer"].includes("outfits-new.vercel.app") ||
-    req.headers["referer"].includes("worldofoutfits.com")
+    req.headers["referrer"].includes("outfits-new.vercel.app") ||
+    req.headers["referrer"].includes("worldofoutfits.com")
   )
     next();
   else res.status(403).end();
