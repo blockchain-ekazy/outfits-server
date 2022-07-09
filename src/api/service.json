@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "world-of-outfits",
+  "private_key_id": "17871d758b8efa9b60f35270b2e553be62877228",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCsQVVtGqDXencC\nqw7JyuYSEKc/KUdohTfAEanblgBTiUwXPNbLzQuIPFIaMUcmTli/S3tSbX4lfZSF\ncZf04v2/8vtlLAj56N8VgeJG3em1cTcBDXIOZ4fQ7IEv0GP1AJU0xWfWMuJ2n48q\ncclOGxDO1wDI62nEqUMR3aTC9TUKJ8WHsbD0z6Sxx97xJbfvtTKltOpDITfduonT\nN6cJUzZQ8SnqY2mKzMJm4xHJl3yFMpyXKkSHzWQMf3jD14/Jt2r904BBbhti5GUE\ntrvKFqsbqmnr3y22BnmpU8E0y3A90mUjyTIOuW6HAd+1ICmdawoKwgC67UlYraNe\nBQGLQ3S5AgMBAAECggEAKvHi7V+NKAuVLioddrvKHkjemYWeEvXbj1wX//HmxOze\n9pApcQf+zwlS4srUVT2FLLQR29wGbixf4eEPJHOPFdLrUC7pUfz32THXixl6Uc0X\nDIEgpWy0VKcSEiyfLw7lJBHvMFzhTve6xrc1m+5tg1PhEzZ12Rzl5sdec2iUv6H/\n7NpnaFpU5eisdCkn/daHXVSi3tyzrIYrcA7b/4koLB6s5Sjtem7VLzKa2Ed4Zi30\n9XjO0je6/kDw5X4tJnn/0e+oQ+fV3hI/gw44p5WdSXFG5c9QKyWPS4dZeUES+O/Y\nwrYDDxCO6dqsgiujI0ZiuNhtCIREyv1wXAc0dUB/7QKBgQDcgZF5dW62nkKwWgLC\nZBC7VuFK+gS5tAiDPOLo9NgIFUEnYje1Lo1Osf99AetXwudwcYMMF6B8p7ETDdA5\nyl4D1gXANrz6Cr+ohDPwjNpbm1OYvIUWThmpec3BIIYXYsrNLDkJQDK3YojKhz5J\ngEhxim5s/ZNmKlRYIvaDyrum+wKBgQDH+3tqlESpMiBqScYfqUc474idvghp5otv\nm0MFZQs0qxr1q8l0uhAr/lgShIuvOQ1ADe96EjiizKOrEQ8M2U4N/V4AqeCnqvaB\nqez7D6MsV2PE7mOSKGU7FlW2HdnkZRllsfwlqAEpUxuF8csK04S9hW6TNTTz+R7w\nzZtGzBAU2wKBgCVwHjnn9UcuMZZtgeBtSuXzx0aKknjRF0zo7oGs6Gze5vP/2gN6\nBuXglMctpz58Sf0uWJiZ/laLxiW9B6h4MmQmV02ePZGad5Xt9D+YOo6pHZVmFJaH\n5hV/J67tjba0wEf7hSeL7dBy+1Sfh7TFAge9ACijGP6Um0NnlEEmD5w3AoGBALyj\nGGCJaVbcJL19x3g4Gim3sPtytMcIJADryMV+8ZoFyJFyML59gCGvcm5NPuHTBA+m\n1X0lUO0n8T69AaBSHpGNrK0dkP83gfz/R73umzGJYV/yqlPE7PBWehUmhVEumE1Y\nHYt7tVTAwxaO5MLakLyg75PGPaPhGvF0UILwnD6/AoGALUq9Tm2vzjg+ZrnHOPp8\nQEUPM6/bqcEQQdc9J26VpRvwXeWNMxpNXWMpdrE4Wau/W0fOxBj9ivxZjc9T8J8/\nZ4qWdximYW6Ck/Zqs0h+VcCKtawySoxPlwsSMzk3LFnTmMXKtL1JW+btm8o3n1Sm\naeVHu7eWW0NZ3UM8o/Is7TA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-rwu1u@world-of-outfits.iam.gserviceaccount.com",
+  "client_id": "103492446847568587611",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-rwu1u%40world-of-outfits.iam.gserviceaccount.com"
+}
