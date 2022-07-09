@@ -13,7 +13,7 @@ module.exports = {
 
       let base = await axios({
         method: "get",
-        url: `https://worldofoutfits.com/collection/unnamed-${id}.png`,
+        url: `https://worldofoutfits.com/bodies/unnamed-${id}.png`,
         responseType: "arraybuffer",
       });
       let img = new canvas.Image();
@@ -37,7 +37,7 @@ module.exports = {
 
       c.on("ready", async function () {
         await new Promise((resolve, reject) => {
-          c.put(buffer, `/public_html/output/unnamed-${id}.png`, (err) => {
+          c.put(buffer, `/public_html/collection/unnamed-${id}.png`, (err) => {
             if (err) reject(err);
             console.log("upload done");
             resolve();
