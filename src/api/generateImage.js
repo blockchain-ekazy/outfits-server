@@ -28,9 +28,9 @@ module.exports = {
 
       const c = new ftp();
       c.connect({
-        user: "owjhczcg5zyg",
-        password: "1234comM",
-        host: "208.109.26.191",
+        user: process.env.FTP_USER,
+        password: process.env.FTP_PASSWORD,
+        host: process.env.FTP_HOST,
         // keepalive: true,
         connTimeout: "300",
       });
