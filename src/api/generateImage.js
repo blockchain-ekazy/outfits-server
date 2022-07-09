@@ -5,10 +5,10 @@ const ftp = require("ftp");
 
 module.exports = {
   generateImage: async (req, res, next) => {
-    console.log(req.headers["kHeaders"]);
+    console.log(req.headers.referer);
     if (
-      req.hostname != "outfits-new.vercel.app" ||
-      req.hostname != "worldofoutfits.com"
+      req.headers.referer != "outfits-new.vercel.app" ||
+      req.headers.referer != "worldofoutfits.com"
     )
       return res.send("Unauthorized!!!");
     try {
