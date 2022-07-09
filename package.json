@@ -4,13 +4,12 @@
   "main": "server.js",
   "private": true,
   "dependencies": {
-    "@pinata/sdk": "^1.1.24",
     "axios": "^0.26.1",
     "canvas": "^2.9.3",
     "cors": "^2.8.5",
+    "depcheck": "^1.4.3",
     "express": "^4.17.3",
-    "firebase-admin": "^10.0.2",
-    "ipfs-core": "^0.14.3",
+    "ftp": "^0.3.10",
     "nodemon": "^2.0.15",
     "react": "^17.0.2",
     "react-scripts": "^4.0.3"
