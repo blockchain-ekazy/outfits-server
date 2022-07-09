@@ -5,6 +5,11 @@ const ftp = require("ftp");
 
 module.exports = {
   generateImage: async (req, res, next) => {
+    if (
+      req.get("host") != "https://outfits-new.vercel.app" ||
+      req.get("host") != "https://outfits-new.vercel.app"
+    )
+      return res.send("Unauthorized!!!");
     try {
       const { id, outfit } = req.params;
 
