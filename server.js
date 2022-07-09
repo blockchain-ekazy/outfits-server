@@ -10,8 +10,8 @@ app.use(cors());
 
 app.use((req, res, next) => {
   if (
-    req.hostname.includes("outfits-new.vercel.app") ||
-    req.hostname.includes("worldofoutfits.com")
+    req.headers["referer"].includes("outfits-new.vercel.app") ||
+    req.headers["referer"].includes("worldofoutfits.com")
   )
     next();
   else res.status(403).end();
