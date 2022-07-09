@@ -9,13 +9,13 @@ var path = require("path");
 app.use(cors());
 
 app.use((req, res, next) => {
-  console.log(req.headers["referrer"]);
+  // console.log(req.get("referrer"));
   if (
-    req.headers["referrer"].includes("outfits-new.vercel.app") ||
-    req.headers["referrer"].includes("worldofoutfits.com")
+    req.get("referrer").includes("outfits-new.vercel.app") ||
+    req.get("referrer").includes("worldofoutfits.com")
   )
     next();
-  else res.status(403).end();
+  else res.status(403).end("Forbidden");
 });
 //metadata api
 // app.use("/api/", require("./src/api/metadata"));
