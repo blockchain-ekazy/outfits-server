@@ -7,5 +7,5 @@ const { generateImage } = require("./generateImage");
 //   generateImage
 // );
 
-router.get("/render/:id/:outfit", generateImage);
+router.get("/render/:id", generateImage);
 module.exports = router;
