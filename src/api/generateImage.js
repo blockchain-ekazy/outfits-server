@@ -47,7 +47,7 @@ module.exports = {
       let layer;
       //Select group
       const group = Math.floor(Math.random() * 100 + 1);
-      if (group <= 32) {
+      if (group <= 30) {
         //jewelry
         let jewelry = fs.readdirSync(
           path.join(__dirname, `../layers/jewelry/`)
@@ -112,7 +112,7 @@ module.exports = {
           trait_type: "Top",
           value: path.parse(tops[tindex]).name,
         });
-      } else if (group <= 64) {
+      } else if (group <= 60) {
         //jewelry
         let jewelry = fs.readdirSync(
           path.join(__dirname, `../layers/jewelry/`)
@@ -151,7 +151,7 @@ module.exports = {
           trait_type: "Dress",
           value: path.parse(dress[soindex]).name,
         });
-      } else if (group <= 96) {
+      } else if (group <= 90) {
         //jewelry
         let jewelry = fs.readdirSync(
           path.join(__dirname, `../layers/jewelry/`)
@@ -230,7 +230,7 @@ module.exports = {
           trait_type: "Jacket",
           value: path.parse(jackets[jacindex]).name,
         });
-      } else {
+      } else if (group <= 96) {
         let legendary = fs.readdirSync(path.join(__dirname, `../layers/full/`));
         let lindex = Math.floor(Math.random() * legendary.length);
         layer = await canvas.loadImage(
@@ -239,7 +239,21 @@ module.exports = {
         ctx.drawImage(layer, 0, 0, 2300, 2300);
 
         metadata.attributes.push({
-          trait_type: "Legendary Outfit",
+          trait_type: "Legendary",
+          value: path.parse(legendary[lindex]).name,
+        });
+      } else {
+        let legendary = fs.readdirSync(
+          path.join(__dirname, `../layers/legendary/`)
+        );
+        let lindex = Math.floor(Math.random() * legendary.length);
+        layer = await canvas.loadImage(
+          path.join(__dirname, `../layers/full/${legendary[lindex]}`)
+        );
+        ctx.drawImage(layer, 0, 0, 2300, 2300);
+
+        metadata.attributes.push({
+          trait_type: "Outfit",
           value: path.parse(legendary[lindex]).name,
         });
       }
