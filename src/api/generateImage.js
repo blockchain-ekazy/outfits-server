@@ -2,7 +2,11 @@ const axios = require("axios");
 const fs = require("fs");
 const canvas = require("canvas");
 const path = require("path");
-const ftp = require("ftp");
+// const ftp = require("ftp");
+const ethers = require("ethers");
+const abi = require("./abi.json");
+
+const { NFTStorage, Blob } = require("nft.storage");
 
 var admin = require("firebase-admin");
 var { service } = require("./service.js");
@@ -10,12 +14,33 @@ var { service } = require("./service.js");
 admin.initializeApp({
   credential: admin.credential.cert(service),
   databaseURL: "https://world-of-outfits-default-rtdb.firebaseio.com",
+  databaseAuthVariableOverride: {
+    uid: process.env.uid,
+  },
 });
 
 module.exports = {
   generateImage: async (req, res, next) => {
     try {
       const { id } = req.params;
+
+      const provider = new ethers.providers.JsonRpcProvider(
+        "https://rinkeby.infura.io/v3/275e79e94ded4372a3c6510f53718bc7"
+      );
+      const ct = new ethers.Contract(
+        "0x0a9453877698a5060206bdc449b29f38e8942bb2",
+        abi,
+        provider
+      );
+      const ver = (await ct.tokenVersion(id)).toNumber();
+
+      var db = admin.database();
+      var ref = db.ref("/" + id);
+      let metadata;
+      await ref.once("value", function (snapshot) {
+        metadata = snapshot.val();
+      });
+      if (metadata.version >= ver) return res.send("Invalid Request");
 
       //Canvas init
       const ca = canvas.createCanvas(2300, 2300);
@@ -31,17 +56,11 @@ module.exports = {
       img.src = base.data;
       ctx.drawImage(img, 0, 0, 2300, 2300);
 
-      let metadata = {};
-      var db = admin.database();
-      var ref = db.ref("/" + id);
-      await ref.once("value", function (snapshot) {
-        metadata = snapshot.val();
-      });
       delete metadata.attributes;
       metadata.attributes = [];
       metadata.attributes.push({
-        trait_type: "World of Women Exclusive",
-        value: "#" + id,
+        trait_type: "Exclusive",
+        value: id < 10000 ? "World of Women" : "World of Outfits",
       });
 
       let layer;
@@ -260,27 +279,13 @@ module.exports = {
 
       const buffer = ca.toBuffer("image/png");
 
-      const c = new ftp();
-      c.connect({
-        user: process.env.FTP_USER,
-        password: process.env.FTP_PASSWORD,
-        host: process.env.FTP_HOST,
-        // keepalive: true,
-        connTimeout: "300",
-      });
+      const client = new NFTStorage({ token: process.env.NFT_STORAGE_TOKEN });
+      const imageFile = new Blob([buffer]);
 
-      c.on("ready", async function () {
-        await new Promise((resolve, reject) => {
-          c.put(buffer, `/public_html/collection/unnamed-${id}.png`, (err) => {
-            if (err) reject(err);
-            console.log("upload done");
-            resolve();
-          });
-        }).then(async () => {
-          await ref.set(metadata);
-          return res.send("upload done!!");
-        });
-      });
+      const ret = await client.storeBlob(imageFile);
+      metadata.image = "https://" + ret + ".ipfs.nftstorage.link/";
+      await ref.set(metadata);
+      return res.send("upload done!!");
     } catch (error) {
       console.log("server error", error.message);
       next(error);

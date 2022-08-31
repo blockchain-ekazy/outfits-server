@@ -9,9 +9,11 @@
     "cors": "^2.8.5",
     "depcheck": "^1.4.3",
     "dotenv": "^16.0.1",
+    "ethers": "^5.7.0",
     "express": "^4.17.3",
     "firebase-admin": "^11.0.0",
     "ftp": "^0.3.10",
+    "nft.storage": "^7.0.0",
     "nodemon": "^2.0.15",
     "react": "^17.0.2",
     "react-scripts": "^4.0.3"
