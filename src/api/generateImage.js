@@ -50,7 +50,9 @@ module.exports = {
       //Draw body
       let base = await axios({
         method: "get",
-        url: `https://worldofoutfits.com/bodies/unnamed-${id}.png`,
+        url: `https://worldofoutfits.com/bodies/${
+          id < 10000 ? "unnamed-" : ""
+        }${id}.png`,
         responseType: "arraybuffer",
       });
       let img = new canvas.Image();

@@ -2,8 +2,10 @@ require("dotenv").config();
 
 var express = require("express");
 var app = express();
-var path = require("path");
+// var path = require("path");
+const cors = require("cors");
 
+app.use(cors());
 //render api
 app.use("/api/", require("./src/api/render"));
 
