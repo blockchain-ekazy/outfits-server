@@ -41,6 +41,7 @@ module.exports = {
         metadata = snapshot.val();
       });
       if (metadata.version >= ver) return res.send("Invalid Request");
+      metadata.version++;
 
       //Canvas init
       const ca = canvas.createCanvas(2300, 2300);
