@@ -286,7 +286,7 @@ module.exports = {
       const ret = await client.storeBlob(imageFile);
       metadata.image = "https://" + ret + ".ipfs.nftstorage.link/";
       await ref.set(metadata);
-      return res.send("upload done!!");
+      return res.send(metadata.image);
     } catch (error) {
       console.log("server error", error.message);
       next(error);
