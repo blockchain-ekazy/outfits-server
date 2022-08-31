@@ -28,7 +28,7 @@ module.exports = {
         "https://rinkeby.infura.io/v3/275e79e94ded4372a3c6510f53718bc7"
       );
       const ct = new ethers.Contract(
-        "0x0a9453877698a5060206bdc449b29f38e8942bb2",
+        "0x2846573b8b87a034Fc1b42466367400b9F51A83a",
         abi,
         provider
       );
